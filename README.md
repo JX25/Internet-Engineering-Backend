@@ -1,4 +1,4 @@
-# InzynieriaInternetu
+# Inzynieria Internetu - projekt
 <hr>
 <h5>Autorzy:</h6>
 <br/>Autor1
