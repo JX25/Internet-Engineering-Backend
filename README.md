@@ -1,8 +1,8 @@
 # Inzynieria Internetu - projekt
 <hr>
 <h5>Autorzy:</h6>
-<br/>Autor1
-<br/>Autor2
+<br/>Kacper Zawadzki
+<br/>Jakub Woźniak
 <hr>
 <h4>O projekcie</h4>
-<p>Lorem ipsum</p>
+<p>Rezerwacja biletów autobusowych</p>
