@@ -15,7 +15,7 @@ exports.ticket_create = function (req, res) {
             price: req.body.price,
             purchase_date: req.body.purchase_date,
             travel_date: req.body.travel_date,
-            discount: req.body.discount,
+            //discount: req.body.discount,
             owner_login: req.body.owner_login,
         }
     );

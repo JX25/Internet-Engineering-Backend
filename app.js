@@ -1,33 +1,34 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+
 
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 
 
-let dev_db_url = 'mongodb://user2:ala123456@ds161112.mlab.com:61112/ii_projekt_kz_jw';
+//let dev_db_url = 'mongodb://user2:ala123456@ds161112.mlab.com:61112/ii_projekt_kz_jw';
+let dev_db_url = 'mongodb://jakub07:jakub07@ds155529.mlab.com:55529/ii_projekt';
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
-mongoose.connect(mongoDB, {useNewUrlParser: true});
+mongoose.connect(mongoDB, {useCreateIndex: true, useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //Imports routes for the everything
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var crudRouter = require('./routes/crud.route');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/user');
+const crudRouter = require('./routes/crud.route');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger('dev'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -37,7 +38,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 //Przypisanie zmiennych do url
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 app.use('/crud', crudRouter);
 
 

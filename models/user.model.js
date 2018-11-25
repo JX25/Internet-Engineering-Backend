@@ -4,10 +4,18 @@ const Schema = mongoose.Schema;
 let UserSchema = new Schema({
     name: {type: String, required: true},
     surname: {type: String, required: true},
-    email: {type: String, required: true},
-    phone_number: {type: Number, required: true, max: 9},
-    login: {type: String, required: true, max: 10},
-    password: {type: String, required: true}, //jakieś haszowanie?
+    email: {
+                type: String,
+                required: true,
+                unique: true,
+                match: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+                index: true
+    },
+    password: {type: String, required: true},
+    phone_number: {type: Number, required: true, max: 999999999, min: 100000000},
+    account_type: {type: Number, required: true},
+    created_date: {type: Date, required: true},
+    modified_date: {type: Date, required: true},
 });
 
 
