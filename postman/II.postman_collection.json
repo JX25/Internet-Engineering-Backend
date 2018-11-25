@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "9c65a8a2-72c8-4c9a-a5e5-be83e19c0e3c",
+		"name": "II",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "My Requests",
+			"item": [
+				{
+					"name": "localhost:3000/user/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"mikolaj@a1\",\n\t\"password\": \"123\",\n\t\"name\": \"Tomasz\",\n\t\"surname\": \"Mroczek\",\n\t\"phone\": 312531222\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/user/5bf9be864fcf2e10b05c043a",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"To1ma1s82822@asda.pl\",\n\t\"password\": \"qweasdzxc\",\n\t\"name\": \"Tomasz\",\n\t\"surname\": \"Mroczek\",\n\t\"phone\": 312531222\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/user/5bf9be864fcf2e10b05c043a",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"5bf9be864fcf2e10b05c043a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/user/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"mikolaj@a1\",\n\t\"password\": \"123\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/user/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/user/update/5bfa7de606a04328a43e225f",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pa29sYWpAYTEiLCJ1c2VySWQiOiI1YmZhN2RlNjA2YTA0MzI4YTQzZTIyNWYiLCJpYXQiOjE1NDMxNTk1NTQsImV4cCI6MTU0MzE2MzE1NH0.qJeGaTAQHm7KhAZ_93LJ_MdmEMAyZYQ5ZmCXR3l83U8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"email\": \"A@ddd\",\r\n    \"name\": \"XXX\",\r\n    \"surname\": \"XXX\",\r\n    \"phone_number\": \"123123123\"\r\n }\r\n"
+						},
+						"url": {
+							"raw": "localhost:3000/user/update/5bfa7de606a04328a43e225f",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"update",
+								"5bfa7de606a04328a43e225f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
