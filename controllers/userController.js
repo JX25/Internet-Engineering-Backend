@@ -1,17 +1,16 @@
-const express = require('express');
-const router = express.Router();
+const User = require('../models/userModel');
+const {ObjectID} = require('mongodb');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user.model');
-const checkAuth = require('../middleware/check_auth');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
 
-router.post('/register', (req, res, next) => {
+
+exports.test = function (req, res) {
+        res.send('Test controller is ok!');
+};
+
+exports.setUser = function(req, res){
     User.find({email: req.body.email})
         .exec()
         .then( user => {
@@ -36,8 +35,7 @@ router.post('/register', (req, res, next) => {
                             created_date: Date.now(),
                             modified_date: Date.now()
                         });
-                        user
-                            .save()
+                        user.save()
                             .then(result => {
                                 res.status(201).json({
                                     message: 'User created'
@@ -53,9 +51,9 @@ router.post('/register', (req, res, next) => {
                 });
             }
         })
-});
+};
 
-router.post("/login", (req, res, next) => {
+exports.loginUser = function(req, res){
     User.find({ email: req.body.email })
         .lean()
         .exec()
@@ -99,9 +97,25 @@ router.post("/login", (req, res, next) => {
                 error: err
             });
         });
-});
+};
 
-router.patch('/update/:userId', checkAuth, (req, res, next) =>{
+exports.getUsers = function (req, res) {
+    User.find({is_admin: false})
+        .exec()
+        .then(users =>{
+            res.status(200).send(
+                JSON.stringify(users)
+            )
+        })
+        .catch( err =>{
+            console.log(err);
+            res.status(500).json({
+                error: err
+            })
+        })
+};
+
+exports.updateUser = function (req, res){
     const id = req.params.userId;
     const updateOps = {};
     for( var ops in req.body){
@@ -121,9 +135,9 @@ router.patch('/update/:userId', checkAuth, (req, res, next) =>{
                 error: err
             });
         });
-});
+};
 
-router.delete('/:userId', (req, res, next) => {
+exports.deleteUser = function (req, res){
     User.deleteOne({_id: req.params.userId})
         .exec()
         .then( result => {
@@ -137,7 +151,21 @@ router.delete('/:userId', (req, res, next) => {
                 error: err
             });
         });
-});
+};
 
 
-module.exports = router;
+    exports.deleteUsers = function (req, res){
+        User.deleteMany({is_admin: false})
+            .exec()
+            .then( result =>{
+                res.status(200).json({
+                    message: result
+                });
+            })
+            .catch( err =>{
+                console.log(err);
+                res.status(500).json({
+                    error: err
+                });
+            });
+    }

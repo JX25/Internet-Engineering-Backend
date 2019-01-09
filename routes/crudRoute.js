@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const crud_controller = require('../controllers/crud.controller');
+const crud_controller = require('../controllers/crudController');
 
 router.get('/test', crud_controller.test);
 //Tickets

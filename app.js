@@ -19,8 +19,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //Imports routes for the everything
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/user');
-const crudRouter = require('./routes/crud.route');
+const usersRouter = require('./routes/userRoute');
+const crudRouter = require('./routes/crudRoute');
 
 const app = express();
 

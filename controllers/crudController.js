@@ -1,6 +1,6 @@
-const Line = require('../models/line.model');
-const Ticket = require('../models/ticket.model');
-const User = require('../models/user.model');
+const Line = require('../models/lineModel');
+const Ticket = require('../models/ticketModel');
+const User = require('../models/userModel');
 const {ObjectID} = require('mongodb');
 
 exports.test = function (req, res) {

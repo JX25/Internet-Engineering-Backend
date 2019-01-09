@@ -13,9 +13,9 @@ let UserSchema = new Schema({
     },
     password: {type: String, required: true},
     phone_number: {type: Number, required: true, max: 999999999, min: 100000000},
-    account_type: {type: Number, required: true},
     created_date: {type: Date, required: true},
     modified_date: {type: Date, required: true},
+    is_admin: {type: Boolean, required: true, default: false}
 });
 
 
