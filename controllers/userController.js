@@ -63,6 +63,11 @@ exports.loginUser = function(req, res){
                     message: "Auth failed"
                 });
             }
+            if (user.active == false) {
+                return res.status(401).json({
+                    message: "Account has been disabled"
+                })
+            }
             bcrypt.compare(req.body.password, user[0].password, (err, result) => {
                 if (err) {
                     return res.status(401).json({

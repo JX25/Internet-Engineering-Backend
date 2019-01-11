@@ -21,6 +21,9 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/userRoute');
 const crudRouter = require('./routes/crudRoute');
+const ticketRouter = require('./routes/ticketRoute');
+const lineRouter = require('./routes/lineRoute');
+const adminRouter = require('./routes/adminRoute');
 
 const app = express();
 
@@ -39,6 +42,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 //Przypisanie zmiennych do url
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
+app.use('/admin', adminRouter);
+app.use('/ticket', ticketRouter);
+app.use('/line', lineRouter);
 app.use('/crud', crudRouter);
 
 

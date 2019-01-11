@@ -2,18 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 const checkAuth = require('../middleware/check_auth');
-const ifAdmin = require('../middleware/if_admin');
 const userController = require('../controllers/userController');
 
-/* GET users listing. */
-router.get('/all', ifAdmin, userController.getUsers);
-router.delete('/all', ifAdmin, userController.deleteUsers);
-
 router.get('/test', userController.test);
+// rejestracja uzytkownika
 router.post('/register', userController.setUser);
+// logowanie uzytkownika
 router.post("/login", userController.loginUser);
+// aktualizacja danych uzytkownika
 router.patch('/update/:userId', checkAuth, userController.updateUser);
+// usuwanie konta uzytkownika
 router.delete('/:userId', checkAuth, userController.deleteUser);
+// reset hasla uzytkownika
 
 
 
