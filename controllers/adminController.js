@@ -51,12 +51,13 @@ exports.addAdmin = function(req, res){
         })
 };
 
-exports.turnOffAccount = function (req, res){
+exports.turnOffOnAccount = function (req, res){
     const id = req.params.userId;
+    const val = (Boolean)req.params.value;git
     User.find({_id: id})
         .exec()
         .then( user =>{
-            User.update({_id: id}, {active: false})
+            User.update({_id: id}, {active: value})
                 .exec()
                 .then(result =>{
                     res.status(200).json({
