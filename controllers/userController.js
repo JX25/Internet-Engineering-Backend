@@ -10,7 +10,7 @@ exports.test = function (req, res) {
         res.send('Test controller is ok!');
 };
 
-exports.setUser = function(req, res){
+exports.createUser = function(req, res){
     User.find({email: req.body.email})
         .exec()
         .then( user => {

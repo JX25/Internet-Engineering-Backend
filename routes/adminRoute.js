@@ -11,9 +11,9 @@ router.get('/all', ifAdmin, userController.getUsers);
 // usuwanie wszystkich uzytkownikow
 router.delete('/all', ifAdmin, userController.deleteUsers);
 // dodawanie administratora
-router.post('/addadmin', ifAdmin, adminController.addAdmin)
+router.post('/addadmin', ifAdmin, adminController.addAdmin);
 // wlaczenie / wylaczenie konta
-router.patch('/turnoff/:userId/:value', ifAdmin, adminController.turnOffOnAccount)
+router.patch('/disableaccount/:userId/:value', ifAdmin, adminController.turnOffOnAccount);
 
 
 

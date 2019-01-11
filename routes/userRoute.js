@@ -6,7 +6,7 @@ const userController = require('../controllers/userController');
 
 router.get('/test', userController.test);
 // rejestracja uzytkownika
-router.post('/register', userController.setUser);
+router.post('/register', userController.createUser);
 // logowanie uzytkownika
 router.post("/login", userController.loginUser);
 // aktualizacja danych uzytkownika
