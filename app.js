@@ -20,7 +20,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 //Imports routes for the everything
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/userRoute');
-const crudRouter = require('./routes/crudRoute');
+
 const ticketRouter = require('./routes/ticketRoute');
 const lineRouter = require('./routes/lineRoute');
 const adminRouter = require('./routes/adminRoute');
@@ -45,7 +45,7 @@ app.use('/user', usersRouter);
 app.use('/admin', adminRouter);
 app.use('/ticket', ticketRouter);
 app.use('/line', lineRouter);
-app.use('/crud', crudRouter);
+
 
 
 // catch 404 and forward to error handler
