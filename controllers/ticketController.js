@@ -2,6 +2,7 @@ const Line = require('../models/lineModel');
 const Ticket = require('../models/ticketModel');
 const User = require('../models/userModel');
 const {ObjectID} = require('mongodb');
+const uuid = require('uuid');
 
 exports.test = function (req, res) {
     res.send('Test controller is ok!');
@@ -10,22 +11,23 @@ exports.test = function (req, res) {
 exports.createTicket = function (req, res) {
     const ticket = new Ticket(
         {
-            serial_number: req.body.serial_number,
+            serial_number: uuid.v1(),
             line: req.body.line,
             price: req.body.price,
-            purchase_date: req.body.purchase_date,
+            //to do data dzien-miesiac-rok godzina-minuty
+            purchase_date: (new Date()).toString(),
             travel_date: req.body.travel_date,
             //discount: req.body.discount,
-            owner_login: req.body.owner_login,
+            owner_email: req.body.owner_email,
         }
     );
 
     ticket.save(function (err) {
         if (err) {
-            return next(err);
+            return res.status(500).send(err);
         }
-        res.send('Ticket Created successfully')
-    })
+        res.send(JSON.stringify(ticket));
+    });
 };
 
 exports.readTicket = (req, res) => {
@@ -44,9 +46,9 @@ exports.readTicket = (req, res) => {
 
 };
 
-exports.userTickets = (req, res) => {
-    const email = req.params.email;
-    Ticket.findMany({owner_login: email})
+exports.allUserTickets = (req, res) => {
+    const email = req.body.email;
+    Ticket.find({owner_email: email})
         .exec()
         .then( tickets =>{
             return res.status(200).send(
@@ -76,8 +78,8 @@ exports.ticket_update = function (req, res) {
     });
 };
 
-exports.ticket_delete = function (req, res) {
-    Ticket.findByIdAndRemove(req.params.id, function (err) {
+exports.ticket_delete = function (req, res, next) {
+    Ticket.deleteOne({serial_number: req.params.ticketId}, function (err) {
         if (err) return next(err);
         res.send('Deleted successfully!');
     })

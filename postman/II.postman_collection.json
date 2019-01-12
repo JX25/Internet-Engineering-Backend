@@ -9,164 +9,751 @@
 			"name": "My Requests",
 			"item": [
 				{
-					"name": "localhost:3000/user/register",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"email\": \"mikolaj@a1\",\n\t\"password\": \"123\",\n\t\"name\": \"Tomasz\",\n\t\"surname\": \"Mroczek\",\n\t\"phone\": 312531222\n}"
-						},
-						"url": {
-							"raw": "localhost:3000/user/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "localhost:3000/user/5bf9be864fcf2e10b05c043a",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"email\": \"To1ma1s82822@asda.pl\",\n\t\"password\": \"qweasdzxc\",\n\t\"name\": \"Tomasz\",\n\t\"surname\": \"Mroczek\",\n\t\"phone\": 312531222\n}"
-						},
-						"url": {
-							"raw": "localhost:3000/user/5bf9be864fcf2e10b05c043a",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"5bf9be864fcf2e10b05c043a"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "localhost:3000/user/login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"email\": \"mikolaj@a1\",\n\t\"password\": \"123\"\n}"
-						},
-						"url": {
-							"raw": "localhost:3000/user/login",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "localhost:3000/user/",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "localhost:3000/user/",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "localhost:3000/user/update/5bfa7de606a04328a43e225f",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pa29sYWpAYTEiLCJ1c2VySWQiOiI1YmZhN2RlNjA2YTA0MzI4YTQzZTIyNWYiLCJpYXQiOjE1NDMxNTk1NTQsImV4cCI6MTU0MzE2MzE1NH0.qJeGaTAQHm7KhAZ_93LJ_MdmEMAyZYQ5ZmCXR3l83U8",
-									"type": "string"
+					"name": "user/admin",
+					"item": [
+						{
+							"name": "localhost:3000/user/register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"user@user\",\n\t\"password\": \"123\",\n\t\"name\": \"Mikolaj\",\n\t\"surname\": \"Mroczek\",\n\t\"phone\": 176256178\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/user/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"register"
+									]
 								}
-							]
-						},
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
 							},
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": " {\r\n    \"email\": \"A@ddd\",\r\n    \"name\": \"XXX\",\r\n    \"surname\": \"XXX\",\r\n    \"phone_number\": \"123123123\"\r\n }\r\n"
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3000/user/update/5bfa7de606a04328a43e225f",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"update",
-								"5bfa7de606a04328a43e225f"
-							]
+						{
+							"name": "localhost:3000/user/5bf9be864fcf2e10b05c043a",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"To1ma1s82822@asda.pl\",\n\t\"password\": \"qweasdzxc\",\n\t\"name\": \"Tomasz\",\n\t\"surname\": \"Mroczek\",\n\t\"phone\": 312531222\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/user/5bf9be864fcf2e10b05c043a",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"5bf9be864fcf2e10b05c043a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/user/login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Beard",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"user@user\",\n\t\"password\": \"123\"\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/user/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/user/",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/user/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/user/update/5bfa7de606a04328a43e225f",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"name\": \"Tymoteusz\",\r\n    \"surname\": \"Rak\",\r\n    \"phone_number\": \"123123123\"\r\n }\r\n"
+								},
+								"url": {
+									"raw": "localhost:3000/user/update/5c39cfe72ef83b09af5385bf",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"update",
+										"5c39cfe72ef83b09af5385bf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/user/all",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/user/all",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/user/all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/admin/all",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/admin/addadmin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"user99@user\",\n\t\"password\": \"123\",\n\t\"name\": \"Mikolaj\",\n\t\"surname\": \"Mroczek\",\n\t\"phone\": 176256178\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/admin/addadmin",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"addadmin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/admin/all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/admin/all",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/admin/all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTFAYWRtaW4iLCJ1c2VySWQiOiI1YzM2NmUwYTQ4NTU0ZTI1Y2ZiY2VhNzEiLCJpYXQiOjE1NDcwNzEwNzQsImV4cCI6MTU0NzA3NDY3NH0.wHWBa542_z3lj0cVPUoo8K9Vgs4cZKQh1s2y_YPAaiY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/admin/all",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/admin/disableaccount/5c39d26c73bd4864ecd7dc94/false",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/admin/disableaccount/5c39d26c73bd4864ecd7dc94/false",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"disableaccount",
+										"5c39d26c73bd4864ecd7dc94",
+										"false"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "line",
+					"item": [
+						{
+							"name": "localhost:3000/line/test",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Kraków - Warszawa\",\n    \"code\": \"KRKWAR\" ,\n    \"start\": \"Kraków\",\n    \"stop\": \"Warszawa\", \n    \"price\": 30, \n    \"seats\": 50, \n    \"time\": 180\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/line/addline",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"line",
+										"addline"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/line/addline",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Kraków - Warszawa\",\n    \"code\": \"KRKWAR\" ,\n    \"start\": \"Kraków\",\n    \"stop\": \"Warszawa\", \n    \"price\": 30, \n    \"seats\": 50, \n    \"time\": 180\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/line/test",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"line",
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/line/update/5c39d7f2740f9674160ef39a",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"city_start\" : \"Lublin\",\n\t\"price\": 100\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/line/update/5c39d7f2740f9674160ef39a",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"line",
+										"update",
+										"5c39d7f2740f9674160ef39a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/line/show/5c39dad89a64ad520c53da4b",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/line/show/5c39dad89a64ad520c53da4b",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"line",
+										"show",
+										"5c39dad89a64ad520c53da4b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/line/show/all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5Mjc1MywiZXhwIjoxNTQ3Mjk2MzUzfQ.6y22Q5CDz_3IusNW4SitVK4FVdnKDYvXhP0e2d-z_lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/line/show/all",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"line",
+										"show",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/line/remove/5c39e79ad84e591e600bae2a",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzI5ODY4NCwiZXhwIjoxNTQ3MzAyMjg0fQ.fuFYoiHTjyZwf2cFuCZ2q8IkqeJQK0QufGvvbJwgubM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/line/remove/5c39e79ad84e591e600bae2a",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"line",
+										"remove",
+										"5c39e79ad84e591e600bae2a"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "ticket",
+					"item": [
+						{
+							"name": "localhost:3000/ticket/test",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/ticket/test",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"ticket",
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/ticket/buy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzMwMjQ3OCwiZXhwIjoxNTQ3MzA2MDc4fQ.UwK9MPH-RLjw5omWj5xIAXUh5N1wEdOklKtya_j12JQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"line\": \"KRKWAW\",\n\t\"price\": 60,\n\t\"travel_date\":\"2019-01-15 18:00\",\n\t\"owner_email\": \"user99@user\"\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/ticket/buy",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"ticket",
+										"buy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/ticket/ba54c360-1676-11e9-8d99-012c8ccc898c",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzMwMjQ3OCwiZXhwIjoxNTQ3MzA2MDc4fQ.UwK9MPH-RLjw5omWj5xIAXUh5N1wEdOklKtya_j12JQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/ticket/ba54c360-1676-11e9-8d99-012c8ccc898c",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"ticket",
+										"ba54c360-1676-11e9-8d99-012c8ccc898c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/ticket/60324fa0-1677-11e9-9a5a-e94653971dd9",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlciIsInVzZXJJZCI6IjVjMzljZmU3MmVmODNiMDlhZjUzODViZiIsImlhdCI6MTU0NzMwMjQ3OCwiZXhwIjoxNTQ3MzA2MDc4fQ.UwK9MPH-RLjw5omWj5xIAXUh5N1wEdOklKtya_j12JQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/ticket/60324fa0-1677-11e9-9a5a-e94653971dd9",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"ticket",
+										"60324fa0-1677-11e9-9a5a-e94653971dd9"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
 				}
 			]
 		}

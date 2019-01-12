@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let TicketSchema = new Schema({
-    serial_number: {type: Number, required: true},
-    line: {type: String, required: true, max: 100},
+    serial_number: {type: String, required: true},
+    line: {type: String, required: true},
     price: {type: Number, required: true},
     purchase_date: {type: String, required: true},
     travel_date: {type: String, required: true},
