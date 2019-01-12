@@ -47,14 +47,17 @@ exports.deleteLine = (req, res, next) => {
 exports.allLines = (req, res, next) => {
     Line.find()
         .exec()
-        .then(lines => {
-            return res.status(200).send(
+        .then(lines =>{
+            res.status(200).send(
                 JSON.stringify(lines)
             )
         })
-        .catch( err => {
-            res.status(500).send(e);
-        });
+        .catch( err =>{
+            console.log(err);
+            res.status(500).json({
+                error: err
+            })
+        })
 }
 
 exports.showLine = (req, res) => {
