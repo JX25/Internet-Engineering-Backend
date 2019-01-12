@@ -52,13 +52,13 @@ exports.userTickets = (req, res) => {
             return res.status(200).send(
                 JSON.stringify(tickets)
             )
-        });
+        })
         .catch( err =>{
         return res.status(404).json({
             message: "No tickets!"
         })
     });
-}
+};
 
 exports.allTickets = (req, res) => {
     Ticket.find().then((tickets) => {

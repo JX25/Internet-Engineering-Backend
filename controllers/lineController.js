@@ -7,7 +7,7 @@ exports.test = function (req, res) {
     res.send('Test controller is ok!');
 };
 
-exports.createLine = function(req, res){
+exports.createLine = function(req, res, next){
     const line = new Line({
         name: req.body.name,
         code: req.body.code,
@@ -26,37 +26,40 @@ exports.createLine = function(req, res){
     })
 };
 
-exports.updateLine = (req, res) => {
-    Line.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, line) {
-        if (err) return next(err);
-        res.send('Product updated.');
+exports.updateLine = (req, res, next) => {
+    Line.findByIdAndUpdate({_id: req.params.lineId}, {$set: req.body}, function (err, line) {
+        if (err) {
+            console.log(err);
+            return next(err);
+        }
+        console.log(line);
+        res.send('Line updated.');
     });
 };
 
-exports.deleteLine = (req, res) => {
-    Line.findByIdAndRemove(req.params.id, function (err) {
+exports.deleteLine = (req, res, next) => {
+    Line.findByIdAndRemove(req.params.lineId, function (err) {
         if (err) return next(err);
         res.send('Deleted successfully!');
-    })
-
-exports.showLines = (req, res) => {
-    Line.find()
-        .exec()
-        .then( lines =>{
-            return res.status(200).send(
-                JSON.stringify(lines)
-            )
-        });
-        .catch( err =>{
-        return res.status(404).json({
-            message: "No tickets!"
-        })
     });
 }
 
+exports.allLines = (req, res, next) => {
+    Line.find()
+        .exec()
+        .then(lines => {
+            return res.status(200).send(
+                JSON.stringify(lines)
+            )
+        })
+        .catch( err => {
+            res.status(500).send(e);
+        });
+}
+
 exports.showLine = (req, res) => {
-    const code = req.params.code;
-    const query  = Ticket.where({ code: code });
+    const id = req.params.lineId;
+    const query = Line.where({_id: id});
 
     query.findOne(function (err, line) {
         if (err) return res.status(404).send();
@@ -67,18 +70,19 @@ exports.showLine = (req, res) => {
     }).catch((e) => {
         return res.status(400).send(e);
     });
+}
 
-exports.deleteAll = function (req, res) {
+exports.deleteAll =  (req, res) => {
     Line.removeMany()
         .exec()
-        .then(result =>{
+        .then(result => {
             res.status(200).json({
                 message: "Tickets cleared"
             })
         })
-        .catch(err =>{
+        .catch(err => {
             res.status(500).json({
                 message: "Problem"
             })
-        })
+        });
 }

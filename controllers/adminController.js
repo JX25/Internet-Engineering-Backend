@@ -2,6 +2,8 @@ const Line = require('../models/lineModel');
 const Ticket = require('../models/ticketModel');
 const User = require('../models/userModel');
 const {ObjectID} = require('mongodb');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 exports.test = function (req, res) {
     res.send('Test controller is ok!');
@@ -52,12 +54,13 @@ exports.addAdmin = function(req, res){
 };
 
 exports.turnOffOnAccount = function (req, res){
+    console.log(req);
     const id = req.params.userId;
-    const val = (Boolean)req.params.value;git
-    User.find({_id: id})
+    const val = (req.params.value == 'true');
+    User.findOne({_id: id})
         .exec()
         .then( user =>{
-            User.update({_id: id}, {active: value})
+            User.update({_id: id}, {active: val})
                 .exec()
                 .then(result =>{
                     res.status(200).json({

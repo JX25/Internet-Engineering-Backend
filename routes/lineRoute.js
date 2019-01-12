@@ -6,7 +6,7 @@ const adminAuth = require('../middleware/if_admin');
 const lineController = require('../controllers/lineController');
 
 //test
-router.get('/test', userController.test);
+router.get('/test', lineController.test);
 
 // dodanie linii
 router.post('/addline', adminAuth, lineController.createLine);
@@ -17,8 +17,9 @@ router.delete('/remove/:lineId', adminAuth, lineController.deleteLine);
 // wyswietlenie linii
 router.get('/show/:lineId', lineController.showLine);
 //wyswietlenie wszystkich linii
-router.get('/show/all', checkAuth, lineController.showLines);
+router.get('/lines', checkAuth, lineController.allLines);
 // usuwanie wszystkich linii
 router.delete('/remove/all', adminAuth, lineController.deleteAll);
 // wyszukanie polaczenia
 
+module.exports = router;
