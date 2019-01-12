@@ -9,6 +9,7 @@ let TicketSchema = new Schema({
     travel_date: {type: String, required: true},
     //discount: {type: Number, required: true},
     owner_email: {type: String, required: true},
+    is_paid: {type: Boolean, required: true, default: false},
 });
 
 
