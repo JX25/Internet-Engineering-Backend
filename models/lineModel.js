@@ -6,6 +6,7 @@ let LineSchema = new Schema({
     code: {type: String, required: true},
     city_start: {type: String, required: true},
     city_destination: {type: String, required: true},
+
     price: {type: Number, required: true},
     seats: {type: Number, required: true},
     travel_time: {type: String, required: true},

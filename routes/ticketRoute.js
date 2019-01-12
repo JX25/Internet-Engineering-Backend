@@ -11,7 +11,7 @@ router.get('/ticket/:serial_number', checkAuth, ticketController.readTicket);
 // historia kupionych biletow
 router.get('ticket/:email', checkAuth, ticketController.userTickets);
 // kupno biletu
-
+router.post('ticket/buy', checkAuth, ticketController.createTicket);
 // usuniecie biletu
 router.delete('ticket/:id', checkAuth, ticketController.ticket_delete);
 // kasowanie wszystkich biletow
