@@ -17,7 +17,7 @@ router.delete('/remove/:lineId', adminAuth, lineController.deleteLine);
 // wyswietlenie linii
 router.get('/show/:lineId', lineController.showLine);
 //wyswietlenie wszystkich linii
-router.get('/lines', checkAuth, lineController.allLines);
+router.get('/lines', lineController.allLines);
 // usuwanie wszystkich linii
 router.delete('/remove/all', adminAuth, lineController.deleteAll);
 // wyszukanie polaczenia
