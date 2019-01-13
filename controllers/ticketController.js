@@ -19,7 +19,7 @@ exports.test = function (req, res) {
 };
 //-------------------------------------------Ticket
 exports.createTicket = function (req, res) {
-    const ticket = new Ticket(
+    let ticket = new Ticket(
         {
             serial_number: uuid.v1(),
             line: req.body.line,
@@ -31,6 +31,21 @@ exports.createTicket = function (req, res) {
             owner_email: req.body.owner_email,
         }
     );
+    console.log(ticket.line);
+    var line = Line.findOne({code:ticket.line}).exec().then(
+        linee =>{
+            console.log(linee);
+            if(linee == null) return res.status(404).json({
+                message: "No line like "+ticket.line.toString()
+            })
+            if(linee.departures.indexOf(ticket.travel_date.split(" ")[1]) == -1){
+                return res.status(404).json({
+                    message: "No departure at "+ticket.travel_date.split(" ")[1]
+                })
+            }
+        }
+    );
+
 
     ticket.save(function (err) {
         if (err) {
@@ -40,7 +55,7 @@ exports.createTicket = function (req, res) {
     });
 };
 
-exports.readTicket = (req, res) => {
+exports.readTicket = function (req, res) {
     const serial_number = req.params.serial_number;
     const query  = Ticket.where({ serial_number: serial_number });
 
@@ -56,9 +71,9 @@ exports.readTicket = (req, res) => {
 
 };
 
-exports.allUserTickets = (req, res) => {
+exports.allUserTickets = function (req, res) {
     console.log("allUserTickets");
-    let email = req.body.email;
+    let email = req.userData.email;
     console.log(email);
     //res.send('Test controller is ok!');
     Ticket.find({owner_email: email})
@@ -76,7 +91,7 @@ exports.allUserTickets = (req, res) => {
 };
 
 
-exports.allTickets = (req, res) => {
+exports.allTickets = function (req, res) {
     Ticket.find().then((tickets) => {
         res.send({tickets});
     }, (e) => {

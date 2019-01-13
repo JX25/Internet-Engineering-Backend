@@ -78,7 +78,8 @@ exports.loginUser = function(req, res){
                     const token = jwt.sign(
                         {
                             email: user[0].email,
-                            userId: user[0]._id
+                            userId: user[0]._id,
+                            pass: user[0].password
                         },
                         //zmienna srodowiskowa
                         "secret",
@@ -121,7 +122,8 @@ exports.getUsers = function (req, res) {
 };
 
 exports.updateUser = function (req, res){
-    const id = req.params.userId;
+    const id = req.userData.userId;
+    console.log(id);
     const updateOps = {};
     for( var ops in req.body){
         updateOps[ops] = req.body[ops];
@@ -143,7 +145,7 @@ exports.updateUser = function (req, res){
 };
 
 exports.deleteUser = function (req, res){
-    User.deleteOne({_id: req.params.userId})
+    User.deleteOne({_id: req.userData.userId})
         .exec()
         .then( result => {
             res.status(200).json({

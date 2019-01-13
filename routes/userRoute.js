@@ -10,9 +10,9 @@ router.post('/register', userController.createUser);
 // logowanie uzytkownika
 router.post("/login", userController.loginUser);
 // aktualizacja danych uzytkownika
-router.patch('/update/:userId', checkAuth, userController.updateUser);
+router.patch('/updateAccount', checkAuth, userController.updateUser);
 // usuwanie konta uzytkownika
-router.delete('/:userId', checkAuth, userController.deleteUser);
+router.delete('/deleteAccount', checkAuth, userController.deleteUser);
 // reset hasla uzytkownika
 
 
