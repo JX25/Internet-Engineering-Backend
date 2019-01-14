@@ -38,21 +38,22 @@ exports.createTicket = function (req, res) {
             if(linee == null) return res.status(404).json({
                 message: "No line like "+ticket.line.toString()
             })
-            if(linee.departures.indexOf(ticket.travel_date.split(" ")[1]) == -1){
+            else if(linee.departures.indexOf(ticket.travel_date.split(" ")[1]) == -1){
                 return res.status(404).json({
                     message: "No departure at "+ticket.travel_date.split(" ")[1]
                 })
             }
+            else {
+                ticket.save(function (err) {
+                    if (err) {
+                        return res.status(500).send(err);
+                    }
+                    res.send(JSON.stringify(ticket));
+                });
+            }
         }
     );
 
-
-    ticket.save(function (err) {
-        if (err) {
-            return res.status(500).send(err);
-        }
-        res.send(JSON.stringify(ticket));
-    });
 };
 
 exports.readTicket = function (req, res) {
