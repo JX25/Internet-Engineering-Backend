@@ -28,7 +28,7 @@ exports.createUser = function(req, res){
                         })
                     } else {
                         const user = new User({
-                            name: req.body.email,
+                            name: req.body.name,
                             surname: req.body.surname,
                             email: req.body.email,
                             password: hash,
