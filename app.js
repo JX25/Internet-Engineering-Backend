@@ -9,8 +9,8 @@ const bodyParser = require('body-parser');
 
 
 
-//let dev_db_url = 'mongodb://user2:ala123456@ds161112.mlab.com:61112/ii_projekt_kz_jw';
-let dev_db_url = 'mongodb://jakub07:jakub07@ds155529.mlab.com:55529/ii_projekt';
+let dev_db_url = 'mongodb://user2:ala123456@ds161112.mlab.com:61112/ii_projekt_kz_jw';
+//let dev_db_url = 'mongodb://jakub07:jakub07@ds155529.mlab.com:55529/ii_projekt';
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {useCreateIndex: true, useNewUrlParser: true});
 mongoose.Promise = global.Promise;
