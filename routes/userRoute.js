@@ -14,6 +14,7 @@ router.patch('/updateAccount', checkAuth, userController.updateUser);
 // usuwanie konta uzytkownika
 router.delete('/deleteAccount', checkAuth, userController.deleteUser);
 // reset hasla uzytkownika
+router.patch('/resetPass', checkAuth, userController.resetPassword);
 
 
 

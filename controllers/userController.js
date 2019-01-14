@@ -3,6 +3,8 @@ const {ObjectID} = require('mongodb');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const uuid = require('uuid');
+const email = require('emailjs');
 
 
 
@@ -176,3 +178,49 @@ exports.deleteUser = function (req, res){
                 });
             });
     }
+
+
+    exports.resetPassword = function (req, res) {
+        const newPassword = uuid.v4();
+        console.log(newPassword);
+        bcrypt.hash(newPassword, 12, (err, hash) => {
+            if (err) {
+                return res.status(500).json({
+                    error: err
+                })
+            } else {
+                User.updateOne({"email": req.userData.email},{$set: {"password": hash}})
+                    .exec()
+                    .then( result =>{
+                        console.log(hash);
+                        console.log(result);
+                        console.log("pass changed");
+                    })
+                    .catch(err =>{
+                        res.status(500).json({
+                            message: "server problem"
+                        })
+                    })
+            }
+        });
+
+        var server 	= email.server.connect({
+            user:    "igkowalski@fastmail.com",
+            port: 465,
+            password:"gepvpv7b3qxkhddk",
+            host:    "smtp.fastmail.com",
+            ssl:     true
+        });
+
+        server.send({
+            text:    "Your new password: "+newPassword,
+            from:    "you <igkowalski@fastmail.com>",
+            to:      "someone <"+req.userData.email+">",
+            //cc:      "else <else@your-email.com>",
+            subject: "Password reset"
+        }, function(err, message) { console.log(err || message); });
+
+        res.status(200).json({
+            message: "Check your email"
+        })
+    };
