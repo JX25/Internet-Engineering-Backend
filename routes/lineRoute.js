@@ -21,5 +21,5 @@ router.get('/lines', lineController.allLines);
 // usuwanie wszystkich linii
 router.delete('/remove/all', adminAuth, lineController.deleteAll);
 // wyszukanie polaczenia
-
+router.get('/find/:start/:stop', lineController.findRoute);
 module.exports = router;

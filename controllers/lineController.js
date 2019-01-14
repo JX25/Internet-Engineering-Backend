@@ -88,4 +88,22 @@ exports.deleteAll =  (req, res) => {
                 message: "Problem"
             })
         });
-}
+};
+
+exports.findRoute = (req, res, next) => {
+  const start = req.params.start.charAt(0).toUpperCase()+req.params.start.slice(1);
+  const stop = req.params.stop.charAt(0).toUpperCase()+req.params.stop.slice(1);;
+
+  Line.find({city_start: start, city_destination: stop})
+      .exec()
+      .then( lines =>{
+          res.status(200).json({
+              lines
+          })
+      })
+      .catch(err =>{
+          res.status(404).json({
+              message: "There is no line between those two cities"
+          })
+      })
+};
